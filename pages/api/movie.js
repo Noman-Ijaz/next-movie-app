@@ -1,9 +1,12 @@
 import axios from "axios";
 
+const apiKey = process.env.MOVIE_API_KEY;
+
+
 export const getMovies = async () => {
   try {
     const { data } = await axios.get(
-      "https://api.themoviedb.org/3/trending/movie/week?api_key=15a62de6b0b90374ca60fd9b92dc7f31"
+      `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
     );
     return data;
   } catch (error) {
@@ -14,7 +17,7 @@ export const getMovies = async () => {
 export const getShows = async () => {
   try {
     const { data } = await axios.get(
-      "https://api.themoviedb.org/3/trending/tv/week?api_key=15a62de6b0b90374ca60fd9b92dc7f31"
+      `https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}`
     );
 
     return data;
@@ -26,7 +29,7 @@ export const getShows = async () => {
 export const getTopRated = async (page) => {
   try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=15a62de6b0b90374ca60fd9b92dc7f31&language=en-US&page=${page}`
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=${page}`
     );
     return data;
   } catch (error) {
@@ -38,7 +41,7 @@ export const getpopular = async () => {
   try {
     // const apiKey = process.env.MOVIE_API_KEY;
     const { data } = await axios.get(
-      "https://api.themoviedb.org/3/movie/popular?api_key=15a62de6b0b90374ca60fd9b92dc7f31&language=en-US&page=3"
+      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=3`
     );
 
     return data;
@@ -50,7 +53,7 @@ export const getpopular = async () => {
 export const getUpcoming = async () => {
   try {
     const { data } = await axios.get(
-      "https://api.themoviedb.org/3/movie/upcoming?api_key=15a62de6b0b90374ca60fd9b92dc7f31&language=en-US&page=1"
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`
     );
     return data;
   } catch (error) {
@@ -61,7 +64,7 @@ export const getUpcoming = async () => {
 export const getMovieDetail = async (movieId) => {
   try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/movie/${movieId}?api_key=15a62de6b0b90374ca60fd9b92dc7f31&language=en-US`
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`
     );
     return data;
   } catch (error) {
@@ -72,7 +75,7 @@ export const getMovieDetail = async (movieId) => {
 export const getMovieCredit = async (movieId) => {
   try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=15a62de6b0b90374ca60fd9b92dc7f31&language=en-US`
+      `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`
     );
     return data;
   } catch (error) {
@@ -83,7 +86,7 @@ export const getMovieCredit = async (movieId) => {
 export const getMovieReviews = async (movieId) => {
   try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=15a62de6b0b90374ca60fd9b92dc7f31&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${apiKey}&language=en-US&page=1`
     );
     return data;
   } catch (error) {
@@ -94,7 +97,7 @@ export const getMovieReviews = async (movieId) => {
 export const getSmilarMovies = async (movieId) => {
   try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=15a62de6b0b90374ca60fd9b92dc7f31&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${apiKey}&language=en-US&page=1`
     );
     return data;
   } catch (error) {
@@ -105,7 +108,7 @@ export const getSmilarMovies = async (movieId) => {
 export const getMoviesCollection = async (collectionName) => {
   try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/movie/${collectionName}?api_key=15a62de6b0b90374ca60fd9b92dc7f31&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/${collectionName}?api_key=${apiKey}&language=en-US&page=1`
     );
     return data;
   } catch (error) {
@@ -116,7 +119,7 @@ export const getMoviesCollection = async (collectionName) => {
 export const getYoutubeVideo = async (movieId) => {
   try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=15a62de6b0b90374ca60fd9b92dc7f31&language=en-US`
+      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}&language=en-US`
     );
     return data;
   } catch (error) {
@@ -127,7 +130,7 @@ export const getYoutubeVideo = async (movieId) => {
 export const getPersonDetail = async (personId) => {
   try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/person/${personId}?api_key=15a62de6b0b90374ca60fd9b92dc7f31&language=en-US`
+      `https://api.themoviedb.org/3/person/${personId}?api_key=${apiKey}&language=en-US`
     );
     return data;
   } catch (error) {
@@ -138,7 +141,7 @@ export const getPersonDetail = async (personId) => {
 export const getPersonActingRecords = async (personId) => {
   try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/person/${personId}/movie_credits?api_key=15a62de6b0b90374ca60fd9b92dc7f31`
+      `https://api.themoviedb.org/3/person/${personId}/movie_credits?api_key=${apiKey}`
     );
     return data;
   } catch (error) {
@@ -149,7 +152,7 @@ export const getPersonActingRecords = async (personId) => {
 export const getRecommendation = async (movieId) => {
   try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=15a62de6b0b90374ca60fd9b92dc7f31&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${apiKey}&language=en-US&page=1`
     );
     return data;
   } catch (error) {
@@ -160,7 +163,7 @@ export const getRecommendation = async (movieId) => {
 export const getMultiSearch = async (search) => {
   try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/search/multi?api_key=15a62de6b0b90374ca60fd9b92dc7f31&language=en-US&query=${search}&page=1&include_adult=false`
+      `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${search}&page=1&include_adult=false`
     );
 
     return data;
@@ -168,4 +171,3 @@ export const getMultiSearch = async (search) => {
     return error.response;
   }
 };
-// const apiKey = process.env.MOVIE_API_KEY;
